@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "c181b122-6e14-494e-a184-b292a4f1e75b",
+		"name": "Api _test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8342362"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.0.23/api_test/login.php",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"23"
+					],
+					"path": [
+						"api_test",
+						"login.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert_update_blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth_token",
+						"value": "589c84cc673fa8b059755b0ef288a1e6499cf726ac0b6993f7765b17180e6930",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"name\":\"blog3\",\r\n    \"description\":\"Welcome to our test blog 3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.0.23/api_test/insert_blog.php",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"23"
+					],
+					"path": [
+						"api_test",
+						"insert_blog.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.23/api_test/get_all.php",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"23"
+					],
+					"path": [
+						"api_test",
+						"get_all.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_one",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.23/api_test/get_one.php",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"23"
+					],
+					"path": [
+						"api_test",
+						"get_one.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "auth_token",
+						"value": "589c84cc673fa8b059755b0ef288a1e6499cf726ac0b6993f7765b17180e6930",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.0.23/api_test/delete_blog.php",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"23"
+					],
+					"path": [
+						"api_test",
+						"delete_blog.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_blog",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth_token",
+						"value": "589c84cc673fa8b059755b0ef288a1e6499cf726ac0b6993f7765b17180e6930",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id\":3,\r\n    \"name\":\"blog3\",\r\n    \"description\":\"Welcome to our test blog 3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.0.23/api_test/update_blog.php",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"23"
+					],
+					"path": [
+						"api_test",
+						"update_blog.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
